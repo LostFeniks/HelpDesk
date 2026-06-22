@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    clean: true,
     publicPath: './',
   },
   module: {
@@ -36,5 +37,6 @@ module.exports = {
   devServer: {
     port: 9000,
     open: true,
+    hot: true,
   },
 };
