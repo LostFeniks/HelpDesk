@@ -4,6 +4,12 @@ on:
   push:
     branches: [ main, master ]
 
+# Разрешаем GITHUB_TOKEN запись в репозиторий
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -32,3 +38,5 @@ jobs:
         publish_dir: ./frontend/dist
         publish_branch: gh-pages
         force_orphan: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
